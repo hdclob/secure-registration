@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1 class="text-center mt-3 mb-0">Validate account</h1>
+<div class="row justify-content-center">
+	<div class="col-6">
+		<form id="validateAccountForm" method="post" action="{{ request.url }}"
+			class="py-3 my-3 px-5 mx-5 text-center">
+			<div class="mb-3 tokenField-container">
+				<input type="text" class="form-control" name="token" id="tokenField" placeholder="Token">
+				<div class="help-block"></div>
+			</div>
+			<button type="submit" id="submitBtn" class="btn btn-primary">Validate</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

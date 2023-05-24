@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block head %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+{% endblock %}
+{% block content %}
+<h1 class="text-center mt-3 mb-0">Create an account</h1>
+<div class="row justify-content-center">
+	<div class="col-6">
+		<form id="registerForm" method="post" action="{{ request.url }}"
+			class="py-3 my-3 px-5 mx-5 text-center">
+			<div class="mb-3 emailField-container">
+				<input type="email" class="form-control" name="email" id="emailField" placeholder="Email address">
+				<div class="help-block"></div>
+			</div>
+			<div class="mb-3 passwordField-container">
+				<input type="" class="form-control" name="password" id="passwordField" placeholder="Password">
+				<div class="help-block"></div>
+			</div>
+			<div id="passwordStrengthBar" class="mb-3" style="display: none">
+				<label class="form-label">Password Strength</label>
+				<div class="progress" style="height: 30px">
+					<div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0"
+						aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<div class="mt-3" id="passwordStrengthCheckList">
+				</div>
+			</div>
+			<div class="mb-3 d-flex justify-content-center">
+				<div class="g-recaptcha" data-sitekey="6LfboTYmAAAAAO9PGZPO7MOVwpVH3L1-SvGSv-6T"></div>
+			</div>
+			<button type="submit" id="submitBtn" class="btn btn-primary">Register</button>
+		</form>
+	</div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}

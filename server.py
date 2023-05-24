@@ -70,8 +70,6 @@ def create_account(email, pwd):
         data = get_data_json()
 
         existing_accounts = [d['email'] for d in data]
-        print(email)
-        print(existing_accounts)
         if email in existing_accounts:
             raise Exception
 
